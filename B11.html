@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 1. Tiêu đề cửa sổ -->
+    <title>Tạo form và các điều khiển trên form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .login-box {
+            width: 320px;
+            margin: 20px auto;
+            border: 1px solid #7f9db9;
+            background-color: #e3f0fb;
+            padding: 5px;
+        }
+        .login-title {
+            text-align: center;
+            color: #800000;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 4px;
+            font-size: 14px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 95%;
+            padding: 2px;
+            border: 1px solid #7f9db9;
+        }
+
+        .btn-container {
+            text-align: center;
+        }
+
+        input[type="button"] {
+            padding: 2px 10px;
+            cursor: pointer;
+        }
+        .result-label {
+            text-align: center;
+            color: #0000ff;
+            font-weight: normal;
+            min-height: 20px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <div class="login-title">Đăng nhập</div>
+        <form id="formDangNhap">
+            <table border="1" style="border-color: #a0a0a0; border-collapse: collapse;">
+                <tr>
+                    <td>Mã người dùng:</td>
+                    <td>
+                        <input type="text" id="txtMaNguoiDung" value="ptnhung">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mật khẩu:</td>
+                    <td>
+                        <input type="password" id="txtMatKhau" value="12345678">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="btn-container">
+                        <!-- Sử dụng sự kiện onclick -->
+                        <input type="button" id="btnDongY" value="Đồng ý" onclick="xuLyDangNhap()">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div id="lblKetQua" class="result-label"></div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        function xuLyDangNhap() {
+            var maNguoiDung = document.getElementById("txtMaNguoiDung").value;
+            document.getElementById("lblKetQua").innerText = maNguoiDung;
+        }
+    </script>
+
+</body>
+</html>
